@@ -116,7 +116,33 @@
 
                     if ($contador != $cantidad) {
 
-                        // MUJERES CON CUALQUIER ESPECIE
+                        // MUJERES HUMANAS
+                        if (($genero == "Female" && $personaje["gender"] == "Female") && ($especie == "Human" && $personaje["species"] == $especie)) {     // $genero ya contiene el valor de la URL, API
+                            echo ("<tr>");
+                            echo ("<td> <img src=" . $personaje["image"] . " alt='personaje'> . </td>");
+                            echo ("<td>" . $personaje["name"] . "</td>");
+                            echo ("<td>" . $personaje["gender"] . "</td>");
+                            echo ("<td>" . $personaje["species"] . "</td>");
+                            $origen = $personaje["origin"];
+                            echo ("<td>" . $origen["name"] . "</td>");
+                            echo ("</tr>");
+                            $contador++;
+                        }
+
+                        // MUJERES ALIEN
+                        elseif (($genero == "Female" && $personaje["gender"] == "Female") && ($especie == "Alien" && $personaje["species"] == $especie)) {     // $genero ya contiene el valor de la URL, API
+                            echo ("<tr>");
+                            echo ("<td> <img src=" . $personaje["image"] . " alt='personaje'> . </td>");
+                            echo ("<td>" . $personaje["name"] . "</td>");
+                            echo ("<td>" . $personaje["gender"] . "</td>");
+                            echo ("<td>" . $personaje["species"] . "</td>");
+                            $origen = $personaje["origin"];
+                            echo ("<td>" . $origen["name"] . "</td>");
+                            echo ("</tr>");
+                            $contador++;
+                        }
+
+                        // MUJERES CUALQUIERA
                         if (($genero == "Female" && $personaje["gender"] == "Female") && ($especie == "Cualquiera" || $personaje["species"] == $especie)) {     // $genero ya contiene el valor de la URL, API
                             echo ("<tr>");
                             echo ("<td> <img src=" . $personaje["image"] . " alt='personaje'> . </td>");
@@ -127,8 +153,32 @@
                             echo ("<td>" . $origen["name"] . "</td>");
                             echo ("</tr>");
                             $contador++;
+                        }
 
-                            
+                        // HOMBRES HUMANOS
+                        elseif (($genero == "Male" && $personaje["gender"] == "Male")  && ($especie == "Human" && $personaje["species"] == $especie)) {     // $genero ya contiene el valor de la URL, API
+                            echo ("<tr>");
+                            echo ("<td> <img src=" . $personaje["image"] . " alt='personaje'> </td>");
+                            echo ("<td>" . $personaje["name"] . "</td>");
+                            echo ("<td>" . $personaje["gender"] . "</td>");
+                            echo ("<td>" . $personaje["species"] . "</td>");
+                            $origen = $personaje["origin"];
+                            echo ("<td>" . $origen["name"] . "</td>");
+                            echo ("</tr>");
+                            $contador++;
+                        }
+
+                        // HOMBRES ALIEN
+                        elseif (($genero == "Male" && $personaje["gender"] == "Male")  && ($especie == "Alien" && $personaje["species"] == $especie)) {     // $genero ya contiene el valor de la URL, API
+                            echo ("<tr>");
+                            echo ("<td> <img src=" . $personaje["image"] . " alt='personaje'> </td>");
+                            echo ("<td>" . $personaje["name"] . "</td>");
+                            echo ("<td>" . $personaje["gender"] . "</td>");
+                            echo ("<td>" . $personaje["species"] . "</td>");
+                            $origen = $personaje["origin"];
+                            echo ("<td>" . $origen["name"] . "</td>");
+                            echo ("</tr>");
+                            $contador++;
                         }
 
                         // HOMBRES CON CUALQUIER ESPECIE
