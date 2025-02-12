@@ -216,3 +216,23 @@
 </body>
 
 </html>
+
+
+!-- Página anterior 
+    <?php if ($paginaActual > 1) { ?>
+            <a href="?page=<?= $prePagina ?>" >Anterior</a>
+        <?php } elseif ($paginaActual > 1) { ?>
+            <a href="?page=<?= $prePagina ?>">Anterior</a>
+        <?php } else { ?>
+            <a href="#"hidden>Anterior</a>
+        <?php } ?>
+
+        <!-- Siguiente página -->
+        <?php if ($paginaActual < $totalPaginas) { ?>
+            <a href="?page=<?= $nextPagina ?>" >Siguiente</a>
+        <?php } elseif (condition) { ?>
+            <a href="?page=<?= $nextPagina ?>" class>Siguiente</a>
+        <?php } else { ?>
+            <a href="#" hidden>Siguiente</a>
+        <?php } ?>
+        
