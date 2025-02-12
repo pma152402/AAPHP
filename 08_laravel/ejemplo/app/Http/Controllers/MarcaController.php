@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Marca;
 
 class MarcaController extends Controller
 {
@@ -11,6 +12,7 @@ class MarcaController extends Controller
      */
     public function index()
     {
+        /*
         $marcas = [
             "Coca Cola",
             "Pepsi",
@@ -18,6 +20,8 @@ class MarcaController extends Controller
             "Malboro",
             "Monopoly"
         ];
+        */
+        $marcas = Marca::all();
 
         return view('marcas', ['marcas' => $marcas]);
     }
