@@ -14,9 +14,10 @@ use App\Http\Controllers\MarcaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/coches', [CocheController::class, 'index']);
 
 Route::resource('/marcas', MarcaController::class);
+
+Route::get('/coches', [CocheController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
